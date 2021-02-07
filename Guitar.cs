@@ -47,16 +47,9 @@ namespace Choose_Your_Class
             return InTune;
         }
 
-        public void DeTune()
-        {
-            InTune = false;
-        }
-
         public void Tune()
         {
             InTune = true;
-            DaysWithGuitar -= 1;
-            SkillLevel += 1;
         }
         
         public int GetStringStatus()
@@ -83,6 +76,7 @@ namespace Choose_Your_Class
         {
             NeedForMaintenance = 0;
             SkillLevel -= 5;
+            DaysWithGuitar += 4;
         }
 
         public void Practice()
@@ -92,7 +86,7 @@ namespace Choose_Your_Class
             InTune = false;
         }
 
-        public void Play()
+        public void PlayConcert()
         {
             SkillLevel += 2;
             StringWearAndTear += 5;
@@ -101,7 +95,14 @@ namespace Choose_Your_Class
 
         public void Time()
         {
+            if (SkillLevel <= 0)
+            {
+                SkillLevel = 0;
+            }
+            else
+            {
             SkillLevel -= 1;
+            }
             StringWearAndTear += 1;
             NeedForMaintenance += 1;
             DaysWithGuitar += 1;
