@@ -81,7 +81,7 @@ namespace Choose_Your_Class
 
         public void Practice()
         {
-            SkillLevel += 3;
+            SkillLevel += 5;
             StringWearAndTear += 10;
             InTune = false;
         }
