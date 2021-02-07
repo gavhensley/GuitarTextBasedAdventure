@@ -20,8 +20,8 @@ namespace Choose_Your_Class
         {
             DaysWithGuitar = 1;
             InTune = false;
-            StringWearAndTear = 0; //If it reaches 100, a string will break and the user will not be able to play
-            NeedForMaintenance = 0; //Let's say the user has to maintain the guitar every 30 days or so. Once this number reaches 30, the user will get a notification to get maintenance. The message will loop until the user takes the guitar in for repairs, aka GetMaintenance().
+            StringWearAndTear = 0; 
+            NeedForMaintenance = 0; 
             SkillLevel = 0;
         }
 
@@ -55,6 +55,8 @@ namespace Choose_Your_Class
         public void Tune()
         {
             InTune = true;
+            DaysWithGuitar -= 1;
+            SkillLevel += 1;
         }
         
         public int GetStringStatus()
